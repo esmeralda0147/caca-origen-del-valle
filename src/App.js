@@ -1,48 +1,151 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavigationBar from './components/Navbar';
+import { Suspense, lazy } from 'react';
+import NavigationBar from './components/NavigationBar';
 import Footer from './components/Footer';
 import { CartProvider } from './context/CartContext';
+import MetaTags from './components/MetaTags';
 
-// Páginas
-import Home from './components/Home';
-import Store from './pages/Store';
-import Cart from './components/Cart';
-import ProductDetail from './pages/ProductDetail';
-import Graciaspage from './pages/Gracias';
-import BillingPage from './pages/BillingPage';
-import AboutUs from './components/AboutUs';
-import Servicios from './pages/Services';
-import Contact from './pages/Contact';
-
-// Nuevas páginas de blog
-import Blog from './pages/Blog';
-import ArticleDetail from './pages/ArticleDetail';
+// Lazy loading para componentes no críticos
+const Home = lazy(() => import('./components/Home'));
+const Store = lazy(() => import('./pages/Store'));
+const Cart = lazy(() => import('./components/Cart'));
+const ProductDetail = lazy(() => import('./pages/ProductDetail'));
+const Graciaspage = lazy(() => import('./pages/Gracias'));
+const BillingPage = lazy(() => import('./pages/BillingPage'));
+const AboutUs = lazy(() => import('./components/AboutUs'));
+const Servicios = lazy(() => import('./pages/Services'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const ArticleDetail = lazy(() => import('./pages/ArticleDetail'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const App = () => {
     return (
         <CartProvider>
             <Router>
-                <div className="app-container">
-                    <NavigationBar />
-                    <main style={{ paddingTop: '60px' }}>
-                        <Routes>
-                            <Route path="/" element={<Home />} />
-                            <Route path="/store" element={<Store />} />
-                            <Route path="/cart" element={<Cart />} />
-                            <Route path="/store/:id" element={<ProductDetail />} />
-                            <Route path="/gracias" element={<Graciaspage />} />
-                            <Route path="/billing" element={<BillingPage />} />
-                            <Route path="/about" element={<AboutUs />} />
-                            <Route path="/services" element={<Servicios />} />
-                            <Route path="/contacto" element={<Contact />} />
-
-                            {/* ✅ Nuevas rutas para Blog */}
-                            <Route path="/blog" element={<Blog />} />
-                            <Route path="/blog/:id" element={<ArticleDetail />} />
-                        </Routes>
+                <div className="app-container" role="application" tabIndex="0">
+                    <MetaTags />
+                    <NavigationBar aria-label="Navegación principal" />
+                    <main style={{ paddingTop: '60px', minHeight: 'calc(100vh - 120px)' }} role="main">
+                        <Suspense fallback={<div className="loading">Cargando...</div>}>
+                            <Routes>
+                                <Route
+                                    path="/"
+                                    element={
+                                        <Home
+                                            aria-label="Página de inicio"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/store"
+                                    element={
+                                        <Store
+                                            aria-label="Tienda"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/cart"
+                                    element={
+                                        <Cart
+                                            aria-label="Carrito de compras"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/store/:id"
+                                    element={
+                                        <ProductDetail
+                                            aria-label="Detalles del producto"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/gracias"
+                                    element={
+                                        <Graciaspage
+                                            aria-label="Página de agradecimiento"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/billing"
+                                    element={
+                                        <BillingPage
+                                            aria-label="Página de facturación"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/about"
+                                    element={
+                                        <AboutUs
+                                            aria-label="Acerca de nosotros"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/services"
+                                    element={
+                                        <Servicios
+                                            aria-label="Nuestros servicios"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/contacto"
+                                    element={
+                                        <Contact
+                                            aria-label="Contacto"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                
+                                {/* Rutas del blog */}
+                                <Route
+                                    path="/blog"
+                                    element={
+                                        <Blog
+                                            aria-label="Blog"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/blog/article/:id"
+                                    element={
+                                        <ArticleDetail
+                                            aria-label="Artículo del blog"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                                
+                                {/* Ruta 404 */}
+                                <Route
+                                    path="*"
+                                    element={
+                                        <NotFound
+                                            aria-label="Página no encontrada"
+                                            role="region"
+                                        />
+                                    }
+                                />
+                            </Routes>
+                        </Suspense>
                     </main>
-                    <Footer />
+                    <Footer aria-label="Pie de página" />
                 </div>
             </Router>
         </CartProvider>

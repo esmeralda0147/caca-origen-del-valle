@@ -1,0 +1,23 @@
+{
+    "name": "tienda-backend",
+    "type": "web",
+    "buildCommand": "npm install",
+    "startCommand": "npm run server",
+    "env": {
+        "NODE_ENV": "production",
+        "FRONTEND_URL": "https://tu-dominio-frontend.vercel.app",
+        "BASE_URL": "https://tienda-backend-pzal.onrender.com"
+    },
+    "httpPort": 3001,
+    "https": true,
+    "healthCheck": {
+        "path": "/api/health",
+        "interval": 30
+    },
+    "webhooks": {
+        "wompi": {
+            "path": "/api/payment/webhook",
+            "method": "POST"
+        }
+    }
+}
