@@ -1,80 +1,71 @@
 .home-container {
     position: relative;
     width: 100%;
-    height: 60vh;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
+    overflow: hidden;
 }
 
-/* Fondo */
+/* Fondo con imagen desde Cloudinary */
 .home-background {
     position: absolute;
     top: 0;
     left: 0;
-    width: 110%;
-    height: 100vh; /* 2/3 de la pantalla */
-    background: url("../assets/background.jpg") no-repeat center center/cover;
-    background-size: cover;
+    width: 100%;
+    height: 100%;
+    background: url('https://res.cloudinary.com/dlxp4pqso/image/upload/v1748711859/63894ccf-ae7f-4c27-beb6-fd3aedc5947a_g5khjg.jpg') no-repeat center center/cover;
     opacity: 0.85;
+    z-index: -1;
 }
 
-/* Texto principal */
+/* Sección de bienvenida */
 .hero-section {
     position: absolute;
-    top: 107%;
-    transform: translateY(-50%);
-    text-align: center; /* Evita justificación */
-    left: 2%; /* Ajusta para mover horizontalmente */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: #f0e1c2;
-    max-width: 100%; /* Evita que el texto sea demasiado ancho */
-    font-family: "Tagesschrift", Patrick Hand;;
+    max-width: 90%;
+    font-family: "Tagesschrift", "Patrick Hand", cursive;
 }
 
 .brand-name {
     font-size: 4rem;
     font-weight: 800;
     color: #f0e1c2;
-    font-family: 'Tagesschrift';
-    text-align: center; /* Puedes cambiar a right o center si lo deseas */
-    max-width: 73%; /* Evita que el texto sea demasiado ancho */
-    left: 30%; /* Ajusta para mover horizontalmente */
+    margin-bottom: 1rem;
 }
 
 .brand-description {
     font-size: 1.3rem;
-    margin-top: 10px;
     font-weight: 700;
     color: #121010;
-    font-family: "Tagesschrift;
-    text-align: left; /* Puedes cambiar a right o center si lo deseas */
-    max-width: 100%; /* Evita que el texto sea demasiado ancho */
-    left: 25%; /* Ajusta para mover horizontalmente */
-}
-
-/* Contenedor de botones */
-.button-container {
-    position: absolute;
-    bottom: -45%; /* Cambia esto para mover los botones verticalmente */
-    left: 12%; /* Ajusta la posición horizontal */
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    font-family: "Tagesschrift", cursive;
+    margin-bottom: 2rem;
 }
 
 /* Botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
 .custom-button {
     text-decoration: none;
     background-color: #401818;
     color: #f0e1c2;
     padding: 15px 35px;
-    font-size: 0.8rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 500;
     border-radius: 10px;
     transition: background 0.3s ease, transform 0.2s;
     border: none;
     cursor: pointer;
-    font-family: "Tagesschrift;
-    white-space: nowrap;
+    font-family: "Tagesschrift", cursive;
     min-width: 150px;
 }
 
@@ -83,67 +74,43 @@
     transform: scale(1.05);
 }
 
-/* Estilos responsive */
+/* Responsive */
 @media (max-width: 1024px) {
-    .hero-section {
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-
     .brand-name {
         font-size: 2.6rem;
     }
 
     .brand-description {
-        font-size: 1.3rem;
-        margin-top: 10px;
-        font-weight: 700;
-        text-align: left; /* Puedes cambiar a right o center si lo deseas */
-    }
-
-    .button-container {
-        bottom: -40%;
-        left: 43%;
-        transform: translateX(-50%);
+        font-size: 1.2rem;
     }
 }
 
 @media (max-width: 768px) {
-    .hero-section {
-        top: 100%;
+    .brand-name {
+        font-size: 2rem;
     }
 
+    .brand-description {
+        font-size: 1rem;
+    }
+
+    .custom-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
     .brand-name {
         font-size: 1.5rem;
     }
 
     .brand-description {
-        font-size: 0.8rem;
-        margin-top: 10px;
-        font-weight: 700;
-        text-align: center; /* Puedes cambiar a right o center si lo deseas */
-    }
-
-    .custom-button {
-        font-size: 1rem;
-        padding: 5px 7px;
-        min-width: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        top: 20%;
-    }
-
-    .brand-name {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .custom-button {
         font-size: 0.8rem;
         padding: 8px 18px;
-        min-width: 100px;
     }
 }

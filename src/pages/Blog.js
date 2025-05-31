@@ -2,21 +2,20 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import blogData from '../data/blogData';
 import '../pages/Blog.css';
-import fondo from '../assets/fondo.jpg';
 
 const Blog = () => {
     return (
         <div
             className="blog-container"
             style={{
-                backgroundImage: `url(${fondo})`,
+                backgroundImage: `url(https://res.cloudinary.com/dlxp4pqso/image/upload/v1748712368/fondo_a7bxcr.jpg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed',
             }}
         >
             <div className="blog-content">
-                <h1 className="blog-title">LA CIENCIA DETRAS DEL CACAO</h1>
+                <h1 className="blog-title">LA CIENCIA DETRÁS DEL CACAO</h1>
                 <div className="articles">
                     {blogData.map((article) => (
                         <div key={article.id} className="article-card">
@@ -37,3 +36,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

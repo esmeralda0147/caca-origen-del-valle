@@ -2,10 +2,10 @@ const blogData = [
     {
         id: '1',
         title: 'Beneficios Científicos del Cacao para la Salud',
-        image: require('../assets/cacao_salud.jpg'),
+        image: 'https://res.cloudinary.com/dlxp4pqso/image/upload/v1748712319/cacao_salud_pgudvk.jpg',
         summary: 'Explora cómo el cacao impacta positivamente en la salud cardiovascular, cognitiva y emocional.',
         content: `
-  <h2>¿Por qué el cacao es considerado un superalimento?</h2>
+      <h2>¿Por qué el cacao es considerado un superalimento?</h2>
       <p>El cacao es rico en flavonoides, especialmente epicatequina y catequina, compuestos antioxidantes que protegen el corazón y reducen la inflamación.</p>
 
       <h2>Beneficios cardiovasculares</h2>
@@ -21,10 +21,10 @@ const blogData = [
     {
         id: '2',
         title: 'Cristalización de la Manteca de Cacao: Clave para un Buen Chocolate',
-        image: require('../assets/cristalizacion.jpg'),
+        image: 'https://res.cloudinary.com/dlxp4pqso/image/upload/v1748712322/cristalizacion_qsg1dv.jpg',
         summary: 'Descubre cómo la cristalización adecuada de la manteca de cacao determina la calidad del chocolate.',
         content: `
-<h2>¿Qué es la cristalización de la manteca de cacao?</h2>
+      <h2>¿Qué es la cristalización de la manteca de cacao?</h2>
       <p>La manteca de cacao puede formar diferentes tipos de cristales, pero solo uno (Forma V) es ideal para un chocolate de alta calidad.</p>
 
       <h2>Importancia del templado</h2>
@@ -40,10 +40,10 @@ const blogData = [
     {
         id: '3',
         title: 'El Cuidado en el Proceso de Transformación del Cacao',
-        image: require('../assets/compuestos.jpg'),
+        image: 'https://res.cloudinary.com/dlxp4pqso/image/upload/v1748712320/compuestos_tm9tps.jpg',
         summary: 'Aprende cómo preservar los compuestos beneficiosos del cacao durante su procesamiento.',
         content: `
- <h2>Importancia de una buena cosecha</h2>
+      <h2>Importancia de una buena cosecha</h2>
       <p>La selección adecuada de vainas maduras asegura un buen contenido de precursores de sabor en los granos.</p>
 
       <h2>Fermentación: el corazón del sabor</h2>
@@ -59,3 +59,4 @@ const blogData = [
 ];
 
 export default blogData;
+

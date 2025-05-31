@@ -2,74 +2,105 @@ import React from 'react';
 import './AboutUs.css';
 
 const AboutUs = () => {
+    const cloudinaryBase = "https://res.cloudinary.com/dlxp4pqso/image/upload";
+
+    const getCloudinaryUrl = (publicId, width = 600, height = 400) =>
+        `${cloudinaryBase}/f_auto,q_auto,w_${width},h_${height},c_fill/${publicId}`;
+
     return (
         <section className="about-section">
-            {/* Recuadro para la descripción principal */}
             <div className="company-description-wrapper">
                 <h3>Conoce nuestra historia</h3>
                 <p>
-                    Desde siempre, el campo ha sido mi hogar. Crecí rodeada de naturaleza, donde cada alimento tiene su tiempo, su proceso y su esencia. Aprendí que transformar un producto no significa alterarlo, sino resaltar lo mejor de él.
-
-                    Esa pasión por la transformación me llevó a estudiar química. Quería entender cómo mejorar los alimentos de forma natural, solo respetando lo que la naturaleza ya nos da. En ese camino, descubrí el cacao. Mi madre comenzó a hacer chocolate de manera artesanal y, al sumergirme en ese mundo, me di cuenta de que el cacao es un tesoro poco explorado.
-
-                    Así nació Chocolate Origen del Valle, una marca que respeta el cacao desde su origen hasta su transformación. Aquí, el proceso no es un secreto: es un arte. Cada paso está diseñado para conservar al máximo su sabor y beneficios nutricionales. Sin aditivos. Sin atajos. Solo cacao puro, trabajado con la dedicación que merece.
-
-                    Pero no solo quiero ofrecer un buen chocolate; quiero que más personas aprendan a reconocerlo. En un mercado lleno de productos ultra procesados, mi propósito es compartir conocimiento y ayudar a las personas a disfrutar de un chocolate real, nutritivo y lleno de historia.
-
+                    Desde siempre, el campo ha sido mi hogar. Crecí rodeada de naturaleza, donde cada alimento tiene su tiempo, su proceso y su esencia...
                     Chocolate Origen del Valle no es solo un producto, es una experiencia que conecta con quienes buscan autenticidad, calidad y un regreso a lo natural.
                 </p>
             </div>
 
-            {/* Bloques con imagen y texto alternado */}
+            {/* Misión */}
             <div className="about-block">
                 <div className="about-image">
-                    <img src="/images/cosecha-cacao.jpg" alt="Cosecha de Cacao" />
+                    <img
+                        src={getCloudinaryUrl("v1748712438/cosecha-caco_dvgjwg.jpg")}
+                        srcSet={`
+              ${getCloudinaryUrl("v1748712438/cosecha-caco_dvgjwg.jpg", 400, 300)} 400w,
+              ${getCloudinaryUrl("v1748712438/cosecha-caco_dvgjwg.jpg", 600, 400)} 600w,
+              ${getCloudinaryUrl("v1748712438/cosecha-caco_dvgjwg.jpg", 800, 533)} 800w
+            `}
+                        sizes="(max-width: 768px) 100vw, 45vw"
+                        alt="Cosecha de Cacao"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="about-text">
                     <h3>Misión</h3>
                     <p>
-                        Crear conciencia sobre los verdaderos beneficios del chocolate y enseñar a identificar un buen cacao de forma sencilla. Nuestra transformación controlada y meticulosa preserva al máximo los nutrientes esenciales y el sabor auténtico del cacao, ofreciendo un chocolate puro, saludable y lleno de propiedades reales para el bienestar.
+                        Crear conciencia sobre los verdaderos beneficios del chocolate y enseñar a identificar un buen cacao de forma sencilla...
                     </p>
                 </div>
             </div>
 
+            {/* Visión */}
             <div className="about-block">
                 <div className="about-image">
-                    <img src="/images/fermentacion.jpg" alt="Fermentación del Cacao" />
+                    <img
+                        src={getCloudinaryUrl("v1748712284/fermentacion_t0al4f.jpg")}
+                        srcSet={`
+              ${getCloudinaryUrl("v1748712284/fermentacion_t0al4f.jpg", 400, 300)} 400w,
+              ${getCloudinaryUrl("v1748712284/fermentacion_t0al4f.jpg", 600, 400)} 600w,
+              ${getCloudinaryUrl("v1748712284/fermentacion_t0al4f.jpg", 800, 533)} 800w
+            `}
+                        sizes="(max-width: 768px) 100vw, 45vw"
+                        alt="Fermentación del Cacao"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="about-text">
                     <h3>Visión</h3>
                     <p>
-                        Ser una marca reconocida por su calidad excepcional, donde las personas descubran una nueva forma de disfrutar el chocolate, valorando su riqueza nutricional y autenticidad. Nuestro compromiso es ofrecer un producto que va más allá de lo comercial, enseñando a los consumidores a experimentar el cacao en su mejor versión, con menos ingredientes y más beneficios reales. Menos es más.
+                        Ser una marca reconocida por su calidad excepcional...
                     </p>
                 </div>
             </div>
 
+            {/* Valores */}
             <div className="about-block">
                 <div className="about-image">
-                    <img src="/images/secar.jpg" alt="Secado del Cacao" />
+                    <img
+                        src={getCloudinaryUrl("v1748712286/secar_vhnflw.jpg")}
+                        srcSet={`
+              ${getCloudinaryUrl("v1748712286/secar_vhnflw.jpg", 400, 300)} 400w,
+              ${getCloudinaryUrl("v1748712286/secar_vhnflw.jpg", 600, 400)} 600w,
+              ${getCloudinaryUrl("v1748712286/secar_vhnflw.jpg", 800, 533)} 800w
+            `}
+                        sizes="(max-width: 768px) 100vw, 45vw"
+                        alt="Secado del Cacao"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="about-text">
                     <h3>Valores</h3>
                     <p>
-                        PUREZA: Ingredientes naturales, sin aditivos ni procesos que alteren el cacao.
-
-                        TRANSPARENCIA: Información clara sobre los beneficios reales y nutrientes del producto.
-
-                        CONSCIENCIA: Un chocolate que conserva sus propiedades esenciales para la salud.
-
-                        RESPETO: Cada grano es tratado con precisión para preservar su esencia.
-
-                        SOSTENIBILIDAD: Compromiso con prácticas responsables en la producción.
-
-                        CALIDAD: Un proceso cuidadosamente diseñado para garantizar un chocolate excepcional en sabor y beneficios.
+                        PUREZA: Ingredientes naturales, sin aditivos...
+                        TRANSPARENCIA, CONSCIENCIA, RESPETO, SOSTENIBILIDAD, CALIDAD.
                     </p>
                 </div>
             </div>
 
+            {/* Diferenciador */}
             <div className="about-block">
                 <div className="about-image">
-                    <img src="/images/equipo.jpg" alt="Nuestro Equipo" />
+                    <img
+                        src={getCloudinaryUrl("v1748712283/equipo_tghrw9.jpg")}
+                        srcSet={`
+              ${getCloudinaryUrl("v1748712283/equipo_tghrw9.jpg", 400, 300)} 400w,
+              ${getCloudinaryUrl("v1748712283/equipo_tghrw9.jpg", 600, 400)} 600w,
+              ${getCloudinaryUrl("v1748712283/equipo_tghrw9.jpg", 800, 533)} 800w
+            `}
+                        sizes="(max-width: 768px) 100vw, 45vw"
+                        alt="Nuestro Equipo"
+                        loading="lazy"
+                    />
                 </div>
                 <div className="about-text">
                     <h3>Diferenciador y Enfoque</h3>
@@ -83,6 +114,7 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
 
 
 

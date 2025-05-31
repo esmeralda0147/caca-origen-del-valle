@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import './Cart.css';
-import fondo from '../assets/fondo.jpg';
+
+const fondo = 'https://res.cloudinary.com/dlxp4pqso/image/upload/v1748712368/fondo_a7bxcr.jpg';
 
 const Cart = () => {
     const { cartItems, removeFromCart, updateQuantity, getTotalPrice } = useCart();
@@ -77,3 +78,4 @@ const Cart = () => {
 };
 
 export default Cart;
+

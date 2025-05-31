@@ -1,14 +1,16 @@
 /* Fondo general para ambas páginas */
-.blog-container, .article-detail-container {
+.blog-container,
+.article-detail-container {
     min-height: 100vh;
     width: 100%;
     padding: 4rem 2rem;
-    background: url('/src/assets/fondo.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: start;
     font-family: 'Poppins', sans-serif;
     color: #4E342E;
+    /* Color de fondo de respaldo */
+    background-color: #f0e1c2;
 }
 
 /* Contenido del Blog */
@@ -166,12 +168,15 @@
 /* ------------------ */
 
 @media (max-width: 768px) {
-    .article-image, .detail-image {
+    .article-image,
+    .detail-image {
         height: 250px;
     }
+
     .detail-title {
         font-size: 2rem;
     }
+
     .blog-title {
         font-size: 2.2rem;
     }

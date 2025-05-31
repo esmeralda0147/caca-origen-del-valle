@@ -1,10 +1,14 @@
 // src/data/products.js
 
+const cloudinaryBase = "https://res.cloudinary.com/dlxp4pqso/image/upload";
+const getImageUrl = (publicId) =>
+    `${cloudinaryBase}/f_auto,q_auto,w_600,h_400,c_fill/${publicId}`;
+
 const products = [
     {
         id: 1,
         name: 'Chocolate 100% Cacao',
-        image: '/images/chocolate100.jpg',
+        image: getImageUrl("v1748712050/chocolate100_lgsjhm.jpg"),
         description: 'Chocolate puro sin azúcar ni aditivos, ideal para recetas saludables.',
         ingredients: ['Pasta de cacao 100%'],
         options: [
@@ -16,7 +20,7 @@ const products = [
     {
         id: 2,
         name: 'Cocoa Natural 500 gramos',
-        image: '/images/cocoa-natural.jpg',
+        image: getImageUrl("v1748712055/cocoa-natural_kuuuuk.jpg"),
         description: 'Cocoa sin alcalinizar, con su sabor original y propiedades antioxidantes.',
         ingredients: ['Cacao en polvo natural'],
         options: [
@@ -28,7 +32,7 @@ const products = [
     {
         id: 3,
         name: 'Cobertura de Chocolate Amargo',
-        image: '/images/cobertura-amargo.jpg',
+        image: getImageUrl("v1748712053/cobertura-amargo_ddr2bb.jpg"),
         description: 'Perfecta para repostería, con un intenso sabor a cacao.',
         ingredients: ['Cacao', 'Manteca de cacao', 'Azúcar'],
         options: [
@@ -40,7 +44,7 @@ const products = [
     {
         id: 4,
         name: 'Cocoa Alcalinizada',
-        image: '/images/cocoa-alcalina.jpg',
+        image: getImageUrl("v1748712054/cocoa-alcalina_ie5nlm.jpg"),
         description: 'Cocoa con proceso de alcalinización, más suave al paladar.',
         ingredients: ['Cacao alcalinizado'],
         options: [
