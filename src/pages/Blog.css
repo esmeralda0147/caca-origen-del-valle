@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: start;
-    font-family:"Tagesschrift;", cursive;
+    font-family: "roboto", sans-serif;
     color: #4E342E;
     /* Color de fondo de respaldo */
     background-color: #f0e1c2;
@@ -31,7 +31,7 @@
     margin-bottom: 3rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family:"Tagesschrift;", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Grid de artículos */
@@ -67,7 +67,7 @@
     font-size: 1.6rem;
     margin: 1rem;
     font-weight: 600;
-    font-family:"Tagesschrift;", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Resumen */
@@ -75,7 +75,7 @@
     font-size: 1.2rem;
     color: #5D4037;
     margin: 0 1rem 1rem 1rem;
-    font-family: "Tagesschrift";
+    font-family: "roboto", sans-serif;
 }
 
 /* Botón leer más */
@@ -92,7 +92,7 @@
     color: #f0e1c2;
     text-decoration: none;
     font-weight: bold;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* ------------------ */
@@ -115,7 +115,7 @@
     text-align: center;
     color: #3E2723;
     text-transform: uppercase;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Imagen destacada */
@@ -132,14 +132,14 @@
     font-size: 1.15rem;
     line-height: 2;
     color: #4E342E;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Párrafos */
 .detail-content p {
     margin-bottom: 1.8rem;
     text-align: justify;
-    font-family: "Tagesschrift";
+    font-family: "roboto", sans-serif;
 }
 
 /* Subtítulos dentro del contenido */
@@ -150,14 +150,14 @@
     color: #5D4037;
     border-left: 5px solid #be6b39;
     padding-left: 1rem;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Links dentro del contenido */
 .detail-content a {
     color: #205b73;
     text-decoration: underline;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Botón para volver */
@@ -168,11 +168,11 @@
     font-weight: bold;
     text-decoration: none;
     font-size: 1rem;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 .back-link:hover {
     text-decoration: underline;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* ------------------ */

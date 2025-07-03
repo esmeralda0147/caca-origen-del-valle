@@ -40,14 +40,14 @@
     color: #512e1f;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 .product-text-section p {
     font-size: 1.3rem;
     color: #401818;
     line-height: 1.6;
-    font-family:"glacial indifference";
+    font-family: "roboto", sans-serif;
 }
 
 

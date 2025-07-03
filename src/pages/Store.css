@@ -47,7 +47,7 @@
     text-align: center;
     margin: 0;
     z-index: 3;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Rejilla de productos */
@@ -89,7 +89,7 @@
     margin-top: 16px;
     color: #333;
     font-weight: bold;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 .product-price {

@@ -4,7 +4,7 @@
     width: 100%;
     background-color: transparent; /* 🎨 CAMBIA el color de fondo */
     padding: 0.1px 0;           /* ⬆️⬇️ CAMBIA el alto del footer */
-    font-family: 'Poppins', sans-serif; /* 🔤 CAMBIA la fuente */
+    font-family: "roboto", sans-serif;
     font-size: 10px;           /* 🔠 CAMBIA tamaño del texto */
     color: #f0e1c2;            /* ⚪ CAMBIA color del texto */
     text-align: right;

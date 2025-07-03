@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     padding: 4rem 1rem;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Caja de formulario tipo glassmorphism */
@@ -38,7 +38,7 @@
     font-size: 2.5rem;
     color: #f0e1c2; /* Marrón oscuro */
     margin-bottom: 20px;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 /* Inputs y Textarea */
@@ -55,7 +55,7 @@
     outline: none;
     backdrop-filter: blur(4px);
     transition: all 0.3s ease;
-    font-family: "Tagesschrift";
+    font-family: "roboto", sans-serif;
 }
 
 .contact-form input:focus,
@@ -76,7 +76,7 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 .submit-button:hover {
@@ -95,7 +95,7 @@
     font-weight: bold;
     font-size: 1rem;
     transition: background-color 0.3s ease;
-    font-family: "Tagesschrift", cursive;
+    font-family: "roboto", sans-serif;
 }
 
 .whatsapp-button:hover {
