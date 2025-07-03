@@ -28,20 +28,33 @@ const Store = () => {
         >
             <div className="overlay" />
             <div className="store-content">
-                <h1 className="store-title">Nuestra Tienda de Chocolates</h1>
+                <h1 className="store-title"> TIENDA DE PRODUCTOS</h1>
+
                 <div className="product-grid">
                     {products.map((product) => {
-                        const basePrice = product.options ? Math.min(...product.options.map(opt => opt.price)) : product.price;
+                        const basePrice = product.options
+                            ? Math.min(...product.options.map(opt => opt.price))
+                            : product.price;
+
                         return (
                             <div className="product-card" key={product.id}>
                                 <Link to={`/store/${product.id}`}>
-                                    <img src={product.image} alt={product.name} className="product-image" />
+                                    <img
+                                        src={product.image}
+                                        alt={product.name}
+                                        className="product-image"
+                                    />
                                 </Link>
                                 <h3 className="product-name">{product.name}</h3>
-                                <p className="product-price">Desde ${basePrice.toLocaleString()}</p>
+                                <p className="product-price">
+                                    Desde ${basePrice.toLocaleString()}
+                                </p>
 
                                 {product.options ? (
-                                    <Link to={`/store/${product.id}`} className="view-product-btn">
+                                    <Link
+                                        to={`/store/${product.id}`}
+                                        className="view-product-btn"
+                                    >
                                         Ver producto
                                     </Link>
                                 ) : (
@@ -50,7 +63,9 @@ const Store = () => {
                                             type="number"
                                             min="1"
                                             value={quantities[product.id] || 1}
-                                            onChange={(e) => handleQuantityChange(product.id, e.target.value)}
+                                            onChange={(e) =>
+                                                handleQuantityChange(product.id, e.target.value)
+                                            }
                                             className="quantity-input"
                                         />
                                         <button

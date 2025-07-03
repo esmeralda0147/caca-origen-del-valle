@@ -39,21 +39,15 @@ const ProductDetail = () => {
     return (
         <div className="product-detail-page fondo-producto">
             <div className="product-detail-wrapper">
-                <div className="product-image-section">
-                    <img src={product.image} alt={product.name} />
+                <div className="product-text-section">
+                    <h2>{product.name}</h2>
+                    <p>{product.description}</p>
+
                 </div>
 
-                <div className="product-info-section">
-                    <h2>{product.name}</h2>
-                    <p className="product-description">{product.description}</p>
-
-                    <div className="product-ingredients">
-                        <h4>Ingredientes:</h4>
-                        <ul>
-                            {product.ingredients.map((ingredient, index) => (
-                                <li key={index}>{ingredient}</li>
-                            ))}
-                        </ul>
+                <div className="product-content">
+                    <div className="product-image-section">
+                        <img src={product.image} alt={product.name} />
                     </div>
 
                     <div className="product-sizes-container">

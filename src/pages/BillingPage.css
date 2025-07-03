@@ -1,6 +1,6 @@
 /* Fuente general */
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Tagesschrift", cursive;
 }
 
 body {
@@ -70,7 +70,7 @@ body {
     border: 1px solid #d6c4b2;
     border-radius: 8px;
     font-size: 1rem;
-    background-color: #fffaf2;
+    background-color: #f0e1c2;
     color: #401818;
     transition: border-color 0.3s;
 }
@@ -152,7 +152,7 @@ body {
 
 .resumen li {
     padding: 10px 0;
-    border-bottom: 1px solid #ece1d5;
+    border-bottom: 1px solid #f0e1c2;
     display: flex;
     justify-content: space-between;
     font-size: 0.95rem;

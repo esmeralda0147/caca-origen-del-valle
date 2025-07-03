@@ -11,12 +11,9 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [sidebarVisible, setSidebarVisible] = useState(false);
     const [showMiniCart, setShowMiniCart] = useState(false);
     const [clickedOnce, setClickedOnce] = useState(false);
-
-    const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
-    const closeSidebar = () => setSidebarOpen(false);
 
     const handleCartClick = () => {
         if (clickedOnce) {
@@ -29,11 +26,15 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-dark bg-dark fixed-top custom-navbar">
+            <nav className="navbar navbar-dark fixed-top custom-navbar">
                 <div className="container d-flex justify-content-between align-items-center">
-                    <button className="navbar-toggler" type="button" onClick={toggleSidebar}>
+                    <div
+                        className="navbar-toggler"
+                        onMouseEnter={() => setSidebarVisible(true)}
+                        onMouseLeave={() => setSidebarVisible(false)}
+                    >
                         <span className="navbar-toggler-icon"></span>
-                    </button>
+                    </div>
 
                     <div
                         className="cart-dropdown-wrapper position-relative"
@@ -53,52 +54,52 @@ const Navbar = () => {
                         </button>
 
                         <div className={`mini-cart-dropdown shadow ${showMiniCart ? 'fade-in' : 'fade-out'}`}>
-                            {showMiniCart && (
-                                <div className="p-3">
-                                    <h6 className="mini-cart-title">Tu carrito</h6>
-                                    <ul className="list-unstyled mini-cart-list">
-                                        {cartItems.length === 0 ? (
-                                            <li className="text-muted">El carrito está vacío</li>
-                                        ) : (
-                                            cartItems.map(item => (
-                                                <li key={item.id} className="mini-cart-item">
-                                                    <div className="d-flex justify-content-between align-items-center">
-                                                        <span className="item-name">{item.name}</span>
-                                                        <span className="item-total-price">
-                                                            ${(item.price * item.quantity).toFixed(2)}
-                                                        </span>
+                            <div className="p-3">
+                                <h6 className="mini-cart-title">Tu carrito</h6>
+                                <ul className="list-unstyled mini-cart-list">
+                                    {cartItems.length === 0 ? (
+                                        <li className="text-muted">El carrito está vacío</li>
+                                    ) : (
+                                        cartItems.map(item => (
+                                            <li key={item.id} className="mini-cart-item">
+                                                <div className="d-flex justify-content-between align-items-center">
+                                                    <span className="item-name">{item.name}</span>
+                                                    <span className="item-total-price">
+                                                        ${(item.price * item.quantity).toFixed(2)}
+                                                    </span>
+                                                </div>
+                                                <div className="d-flex justify-content-between align-items-center mt-1">
+                                                    <div className="quantity-controls">
+                                                        <button onClick={() => decreaseQuantity(item.id)} className="btn btn-sm btn-outline-secondary">-</button>
+                                                        <span className="mx-2">{item.quantity}</span>
+                                                        <button onClick={() => increaseQuantity(item.id)} className="btn btn-sm btn-outline-secondary">+</button>
                                                     </div>
-                                                    <div className="d-flex justify-content-between align-items-center mt-1">
-                                                        <div className="quantity-controls">
-                                                            <button onClick={() => decreaseQuantity(item.id)} className="btn btn-sm btn-outline-secondary">-</button>
-                                                            <span className="mx-2">{item.quantity}</span>
-                                                            <button onClick={() => increaseQuantity(item.id)} className="btn btn-sm btn-outline-secondary">+</button>
-                                                        </div>
-                                                        <small className="unit-price">(${item.price.toFixed(2)} c/u)</small>
-                                                    </div>
-                                                </li>
-                                            ))
-                                        )}
-                                    </ul>
-                                    <div className="d-flex justify-content-between fw-bold mt-3 total-section">
-                                        <span>Total:</span>
-                                        <span>${totalPrice.toFixed(2)}</span>
-                                    </div>
-                                    <div className="mt-3 text-end">
-                                        <Link to="/cart" className="btn custom-cart-btn w-100">
-                                            Ver carrito
-                                        </Link>
-                                    </div>
+                                                    <small className="unit-price">(${item.price.toFixed(2)} c/u)</small>
+                                                </div>
+                                            </li>
+                                        ))
+                                    )}
+                                </ul>
+                                <div className="d-flex justify-content-between fw-bold mt-3 total-section">
+                                    <span>Total:</span>
+                                    <span>${totalPrice.toFixed(2)}</span>
                                 </div>
-                            )}
+                                <div className="mt-3 text-end">
+                                    <Link to="/cart" className="btn custom-cart-btn w-100">
+                                        Ver carrito
+                                    </Link>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </nav>
 
-            <div className={`overlay ${sidebarOpen ? 'show' : ''}`} onClick={closeSidebar}></div>
-
-            <div className={`sidebar ${sidebarOpen ? 'show' : ''}`}>
+            <div
+                className={`sidebar ${sidebarVisible ? 'show-sidebar' : ''}`}
+                onMouseEnter={() => setSidebarVisible(true)}
+                onMouseLeave={() => setSidebarVisible(false)}
+            >
                 <ul className="navbar-nav flex-column">
                     {[
                         { to: '/', text: 'Inicio' },
@@ -106,13 +107,13 @@ const Navbar = () => {
                         { to: '/blog', text: 'Blog' },
                         { to: '/services', text: 'Servicios' },
                         { to: '/about', text: 'Sobre Nosotros' },
-                        { to: '/contacto', text: 'Contáctenos' }, // ✅ corregido aquí
+                        { to: '/contacto', text: 'Contáctenos' },
                     ].map(({ to, text }) => (
                         <li className="nav-item" key={to}>
                             <Link
                                 className={`nav-link ${location.pathname === to ? 'active' : ''}`}
                                 to={to}
-                                onClick={closeSidebar}
+                                onClick={() => setSidebarVisible(false)}
                             >
                                 {text}
                             </Link>
@@ -124,4 +125,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar
+export default Navbar;

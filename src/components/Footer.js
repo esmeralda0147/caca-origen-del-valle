@@ -14,9 +14,9 @@ const Footer = () => {
         }}>
             <div className="container">
                 <div className="social-icons">
-                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
-                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61576816172920" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/cacaoorigendelvalle/" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/573148579987" target="_blank" rel="noopener noreferrer"><i className="fab fa-whatsapp"></i></a>
                 </div>
                 <p>&copy; {new Date().getFullYear()} Cacao Origen del Valle. Todos los derechos reservados.</p>
             </div>

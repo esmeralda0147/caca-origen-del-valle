@@ -11,10 +11,10 @@ const Contact = () => {
                     <input type="text" name="name" placeholder="Tu nombre" required />
                     <input type="email" name="email" placeholder="Tu correo electrónico" required />
                     <textarea name="message" placeholder="Tu mensaje" required />
-                    <button type="submit" className="submit-button">Enviar</button>
+                    <button type="submit" className="submit-button">ENVIAR</button>
                 </form>
                 <a
-                    href="https://wa.me/573001234567"
+                    href="https://wa.me/573148579987"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="whatsapp-button"

@@ -55,7 +55,7 @@ const Services = () => {
                 <div className="text-center mt-5">
                     <Link to="/contacto">
                         <button className="servicio-btn">
-                            Contáctame
+                            CONTACTAME
                         </button>
                     </Link>
                 </div>

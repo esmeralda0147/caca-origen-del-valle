@@ -35,13 +35,14 @@
     font-weight: 800;
     color: #f0e1c2;
     margin-bottom: 1rem;
+    font-family: "Tagesschrift", cursive;
 }
 
 .brand-description {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 700;
-    color: #121010;
-    font-family: "Tagesschrift", cursive;
+    color: #f0e1c2;
+    font-family: "Tagesschrift";
     margin-bottom: 2rem;
 }
 

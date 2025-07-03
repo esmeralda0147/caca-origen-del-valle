@@ -19,7 +19,7 @@
 
 /* Tipografía general */
 body, .servicio-card, .servicio-card p, .servicio-card h5 {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Tagesschrift", cursive;
 }
 
 /* Título principal */
@@ -29,12 +29,14 @@ body, .servicio-card, .servicio-card p, .servicio-card h5 {
     font-size: 2.8rem;
     letter-spacing: 1px;
     color: rgba(64, 24, 24, 0.99);
+    font-family:"tagesschrift", cursive;
 }
 
 /* Subtítulo */
 .servicios-section p.subtitulo {
     color: rgba(64, 24, 24, 0.94);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    font-family: "Tagesschrift";
 }
 
 /* Tarjetas */
@@ -66,12 +68,14 @@ body, .servicio-card, .servicio-card p, .servicio-card h5 {
     font-size: 1.2rem;
     color: rgb(190, 107, 57);
     text-transform: uppercase;
+    font-family:"Tagesschrift", cursive;
 }
 
 /* Texto de las tarjetas */
 .servicios-section .servicio-card p.card-text {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: rgba(240, 225, 194, 0.76);
+    font-family: "Tagesschrift",center ;
 }
 
 /* Botón personalizado */
@@ -83,9 +87,11 @@ body, .servicio-card, .servicio-card p, .servicio-card h5 {
     padding: 12px 30px;
     border-radius: 10px;
     transition: background-color 0.3s ease;
+    font-family: "Tagesschrift", cursive;
 }
 
 .servicio-btn:hover {
     background-color: #205b73;
     color: #f0e1c2;
+    font-family: "Tagesschrift", cursive;
 }
